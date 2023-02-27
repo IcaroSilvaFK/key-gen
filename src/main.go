@@ -10,9 +10,10 @@ func main() {
 
 	app := gin.Default()
 
+	app.Use(cors.Default())
+
 	router := app.Group("/api/_v1")
 
-	router.Use(cors.Default())
 	routes.ApplicationRoutes(router)
 
 	app.Run()
